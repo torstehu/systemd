@@ -665,14 +665,14 @@ int main(int argc, char *argv[]) {
         if (r < 0)
                 log_warning_errno(r, "Failed to parse kernel command line, ignoring: %m");
 
-        /* Always honour root= and usr= in the kernel command line if we are in an initrd */
+        /* Always honor root= and usr= in the kernel command line if we are in an initrd */
         if (in_initrd()) {
                 r = add_sysroot_mount();
                 if (r == 0)
                         r = add_sysroot_usr_mount();
         }
 
-        /* Honour /etc/fstab only when that's enabled */
+        /* Honor /etc/fstab only when that's enabled */
         if (arg_fstab_enabled) {
                 int k;
 

@@ -279,7 +279,7 @@
   released at the end of a function, and not at the end of a {}
   block. Thus, if you invoke it in a loop, you keep increasing the
   stack pointer without ever releasing memory again. (VLAs have better
-  behaviour in this case, so consider using them as an alternative.)
+  behavior in this case, so consider using them as an alternative.)
   Regarding not using alloca() within function parameters, see the
   BUGS section of the alloca(3) man page.
 

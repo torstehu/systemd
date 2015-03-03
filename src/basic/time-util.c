@@ -44,7 +44,7 @@ static nsec_t timespec_load_nsec(const struct timespec *ts);
 
 static clockid_t map_clock_id(clockid_t c) {
 
-        /* Some more exotic archs (s390, ppc, …) lack the "ALARM" flavour of the clocks. Thus, clock_gettime() will
+        /* Some more exotic archs (s390, ppc, …) lack the "ALARM" flavor of the clocks. Thus, clock_gettime() will
          * fail for them. Since they are essentially the same as their non-ALARM pendants (their only difference is
          * when timers are set on them), let's just map them accordingly. This way, we can get the correct time even on
          * those archs. */

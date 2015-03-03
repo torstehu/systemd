@@ -1466,7 +1466,7 @@ int main(int argc, char *argv[]) {
         }
 
         if (getpid() == 1) {
-                /* Don't limit the core dump size, so that coredump handlers such as systemd-coredump (which honour the limit)
+                /* Don't limit the core dump size, so that coredump handlers such as systemd-coredump (which honor the limit)
                  * will process core dumps for system services by default. */
                 (void) setrlimit(RLIMIT_CORE, &RLIMIT_MAKE_CONST(RLIM_INFINITY));
 

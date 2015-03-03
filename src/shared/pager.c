@@ -70,7 +70,7 @@ int pager_open(bool no_pager, bool jump_to_end) {
         if (!pager)
                 pager = getenv("PAGER");
 
-        /* If the pager is explicitly turned off, honour it */
+        /* If the pager is explicitly turned off, honor it */
         if (pager && (pager[0] == 0 || streq(pager, "cat")))
                 return 0;
 

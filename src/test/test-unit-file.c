@@ -149,7 +149,7 @@ static void test_config_parse_exec(void) {
         assert_se(r == 0);
         assert_se(c1->command_next == NULL);
 
-        log_info("/* honour_argv0 */");
+        log_info("/* honor_argv0 */");
         r = config_parse_exec(NULL, "fake", 3, "section", 1,
                               "LValue", 0, "@/RValue///slashes2 ///argv0 r1",
                               &c, u);
@@ -157,7 +157,7 @@ static void test_config_parse_exec(void) {
         c1 = c1->command_next;
         check_execcommand(c1, "/RValue/slashes2", "///argv0", "r1", NULL, false);
 
-        log_info("/* honour_argv0, no args */");
+        log_info("/* honor_argv0, no args */");
         r = config_parse_exec(NULL, "fake", 3, "section", 1,
                               "LValue", 0, "@/RValue",
                               &c, u);
@@ -171,7 +171,7 @@ static void test_config_parse_exec(void) {
         assert_se(r == 0);
         assert_se(c == NULL);
 
-        log_info("/* ignore && honour_argv0 */");
+        log_info("/* ignore && honor_argv0 */");
         r = config_parse_exec(NULL, "fake", 4, "section", 1,
                               "LValue", 0, "-@/RValue///slashes3 argv0a r1",
                               &c, u);
@@ -179,7 +179,7 @@ static void test_config_parse_exec(void) {
         c1 = c;
         check_execcommand(c1, "/RValue/slashes3", "argv0a", "r1", NULL, true);
 
-        log_info("/* ignore && honour_argv0 */");
+        log_info("/* ignore && honor_argv0 */");
         r = config_parse_exec(NULL, "fake", 4, "section", 1,
                               "LValue", 0, "@-/RValue///slashes4 argv0b r1",
                               &c, u);

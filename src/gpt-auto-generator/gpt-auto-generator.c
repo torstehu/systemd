@@ -744,7 +744,7 @@ static int enumerate_partitions(dev_t devnum) {
                         if (boot && nr >= boot_nr)
                                 continue;
 
-                        /* Note that we do not honour the "no-auto"
+                        /* Note that we do not honor the "no-auto"
                          * flag for the ESP, as it is often unset, to
                          * hide it from Windows. */
 

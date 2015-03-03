@@ -436,7 +436,7 @@ DnsScopeMatch dns_scope_good_domain(DnsScope *s, int ifindex, uint64_t flags, co
         if (dns_name_endswith(domain, "invalid") > 0)
                 return DNS_SCOPE_NO;
 
-        /* Always honour search domains for routing queries. Note that
+        /* Always honor search domains for routing queries. Note that
          * we return DNS_SCOPE_YES here, rather than just
          * DNS_SCOPE_MAYBE, which means wildcard scopes won't be
          * considered anymore. */

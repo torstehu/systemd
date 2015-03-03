@@ -384,7 +384,7 @@ static void dns_server_reset_counters(DnsServer *s) {
          * either.
          *
          * This is particularly important to deal with certain Belkin routers which break OPT for certain lookups (A),
-         * but pass traffic through for others (AAAA). If we detect the broken behaviour on one lookup we should not
+         * but pass traffic through for others (AAAA). If we detect the broken behavior on one lookup we should not
          * reenable it for another, because we cannot validate things anyway, given that the RRSIG/OPT data will be
          * incomplete. */
 }

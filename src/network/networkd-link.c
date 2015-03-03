@@ -2069,7 +2069,7 @@ static int link_set_ipv4_forward(Link *link) {
          * global setting one way. This means: as long as at least one
          * interface was configured at any time that had IP forwarding
          * enabled the setting will stay on for good. We do this
-         * primarily to keep IPv4 and IPv6 packet forwarding behaviour
+         * primarily to keep IPv4 and IPv6 packet forwarding behavior
          * somewhat in sync (see below). */
 
         r = write_string_file("/proc/sys/net/ipv4/ip_forward", "1", WRITE_STRING_FILE_VERIFY_ON_FAILURE);
@@ -2091,7 +2091,7 @@ static int link_set_ipv6_forward(Link *link) {
          * per-interface setting, but simply propagate the interface
          * flag, if it is set, to the global flag, one-way. Note that
          * while IPv4 would allow a per-interface flag, we expose the
-         * same behaviour there and also propagate the setting from
+         * same behavior there and also propagate the setting from
          * one to all, to keep things simple (see above). */
 
         r = write_string_file("/proc/sys/net/ipv6/conf/all/forwarding", "1", WRITE_STRING_FILE_VERIFY_ON_FAILURE);

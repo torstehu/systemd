@@ -82,7 +82,7 @@
     <citerefentry><refentrytitle>systemd.exec</refentrytitle><manvolnum>5</manvolnum></citerefentry>).
     </para>
 
-    <para>The behaviour of <command>systemd-coredump</command> is configured through
+    <para>The behavior of <command>systemd-coredump</command> is configured through
     <filename>/etc/systemd/coredump.conf</filename> and other configuration files. See
     <citerefentry><refentrytitle>coredump.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>
     for details. By default, <command>systemd-coredump</command> will log the coredump including a

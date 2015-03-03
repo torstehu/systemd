@@ -302,7 +302,7 @@
         <para><literal>ignore-requirements</literal> is similar to
         <literal>ignore-dependencies</literal>, but only causes the
         requirement dependencies to be ignored, the ordering
-        dependencies will still be honoured.</para>
+        dependencies will still be honored.</para>
         </listitem>
 
       </varlistentry>

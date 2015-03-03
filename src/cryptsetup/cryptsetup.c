@@ -502,7 +502,7 @@ static int attach_luks_or_plain(struct crypt_device *cd,
                         if (!streq(arg_hash, "plain"))
                                 params.hash = arg_hash;
                 } else if (!key_file)
-                        /* for CRYPT_PLAIN, the behaviour of cryptsetup
+                        /* for CRYPT_PLAIN, the behavior of cryptsetup
                          * package is to not hash when a key file is provided */
                         params.hash = "ripemd160";
 

@@ -1338,7 +1338,7 @@ int bus_unit_set_properties(
 
         /* We iterate through the array twice. First run we just check
          * if all passed data is valid, second run actually applies
-         * it. This is to implement transaction-like behaviour without
+         * it. This is to implement transaction-like behavior without
          * actually providing full transactions. */
 
         r = sd_bus_message_enter_container(message, 'a', "(sv)");

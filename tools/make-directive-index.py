@@ -62,7 +62,7 @@ TEMPLATE = '''\
         <refsect1>
                 <title>Options on the kernel command line</title>
 
-                <para>Kernel boot options for configuring the behaviour of the
+                <para>Kernel boot options for configuring the behavior of the
                 systemd process.</para>
 
                 <variablelist id='kernel-commandline-options' />
@@ -107,7 +107,7 @@ TEMPLATE = '''\
         <refsect1>
                 <title>PAM configuration directives</title>
 
-                <para>Directives for configuring PAM behaviour.</para>
+                <para>Directives for configuring PAM behavior.</para>
 
                 <variablelist id='pam-directives' />
         </refsect1>
@@ -125,7 +125,7 @@ TEMPLATE = '''\
         <refsect1>
                 <title>System manager directives</title>
 
-                <para>Directives for configuring the behaviour of the
+                <para>Directives for configuring the behavior of the
                 systemd process.</para>
 
                 <variablelist id='systemd-directives' />

@@ -862,7 +862,7 @@ static int parse_attribute_from_arg(Item *item) {
         } attributes[] = {
                 { 'A', FS_NOATIME_FL },      /* do not update atime */
                 { 'S', FS_SYNC_FL },         /* Synchronous updates */
-                { 'D', FS_DIRSYNC_FL },      /* dirsync behaviour (directories only) */
+                { 'D', FS_DIRSYNC_FL },      /* dirsync behavior (directories only) */
                 { 'a', FS_APPEND_FL },       /* writes to file may only append */
                 { 'c', FS_COMPR_FL },        /* Compress file */
                 { 'd', FS_NODUMP_FL },       /* do not dump file */
@@ -1523,7 +1523,7 @@ static int remove_item_instance(Item *i, const char *instance) {
         case TRUNCATE_DIRECTORY:
         case RECURSIVE_REMOVE_PATH:
                 /* FIXME: we probably should use dir_cleanup() here
-                 * instead of rm_rf() so that 'x' is honoured. */
+                 * instead of rm_rf() so that 'x' is honored. */
                 log_debug("rm -rf \"%s\"", instance);
                 r = rm_rf(instance, (i->type == RECURSIVE_REMOVE_PATH ? REMOVE_ROOT|REMOVE_SUBVOLUME : 0) | REMOVE_PHYSICAL);
                 if (r < 0 && r != -ENOENT)

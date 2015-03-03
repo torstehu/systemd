@@ -218,7 +218,7 @@ CHANGES WITH 229:
           hook only does minimal metadata collection before passing off control
           to the new instantiated service, which is configured with a time
           limit, a nice level and other settings to minimize negative impact on
-          the rest of the system. Also note that the new logic will honour the
+          the rest of the system. Also note that the new logic will honor the
           RLIMIT_CORE setting of the crashed process, which now allows users
           and processes to turn off coredumping for their processes by setting
           this limit.
@@ -228,7 +228,7 @@ CHANGES WITH 229:
           the setting at "0" for all processes, as set by the kernel. Note that
           the resource limit traditionally has no effect on the generated
           coredumps on the system if the /proc/sys/kernel/core_pattern hook
-          logic is used. Since the limit is now honoured (see above) its
+          logic is used. Since the limit is now honored (see above) its
           default has been changed so that the coredumping logic is enabled by
           default for all processes, while allowing specific opt-out.
 
@@ -490,7 +490,7 @@ CHANGES WITH 228:
 
         * Timer units gained support for a new RemainAfterElapse=
           setting which takes a boolean argument. It defaults on on,
-          exposing behaviour unchanged to previous releases. If set to
+          exposing behavior unchanged to previous releases. If set to
           off, timer units are unloaded after they elapsed if they
           cannot elapse again. This is particularly useful for
           transient timer units, which shall not stay around longer
@@ -542,7 +542,7 @@ CHANGES WITH 228:
           other options that provide a similar effect (such as
           systemctl --mode=ignore-dependencies) are much more useful
           and commonly used. Moreover, they were only half-way
-          implemented as the option to control behaviour regarding
+          implemented as the option to control behavior regarding
           these dependencies was never added to systemctl. By removing
           these dependency types the execution engine becomes a bit
           simpler. Unit files that use these dependencies should be
@@ -553,18 +553,18 @@ CHANGES WITH 228:
           files accordingly. Removal of these dependency types should
           only affect a negligible number of unit files in the wild.
 
-        * Behaviour of networkd's IPForward= option changed
+        * Behavior of networkd's IPForward= option changed
           (again). It will no longer maintain a per-interface setting,
           but propagate one way from interfaces where this is enabled
           to the global kernel setting. The global setting will be
           enabled when requested by a network that is set up, but
           never be disabled again. This change was made to make sure
-          IPv4 and IPv6 behaviour regarding packet forwarding is
+          IPv4 and IPv6 behavior regarding packet forwarding is
           similar (as the Linux IPv6 stack does not support
           per-interface control of this setting) and to minimize
           surprises.
 
-        * In unit files the behaviour of %u, %U, %h, %s has
+        * In unit files the behavior of %u, %U, %h, %s has
           changed. These specifiers will now unconditionally resolve
           to the various user database fields of the user that the
           systemd instance is running as, instead of the user
@@ -576,7 +576,7 @@ CHANGES WITH 228:
           resolved, but hardly made any sense, since the user instance
           lacks privileges to do user switches anyway, and User= is
           hence useless. Morever, even in the --user instance of
-          systemd behaviour was awkward as it would only take settings
+          systemd behavior was awkward as it would only take settings
           from User= assignment placed before the specifier into
           account. In order to unify and simplify the logic around
           this the specifiers will now always resolve to the
@@ -886,7 +886,7 @@ CHANGES WITH 226:
           threads when counting tasks in a control group. Also, the
           count of processes is now recursively summed up by
           default. Two options -k and --recursive= have been added to
-          revert to old behaviour. The tool has also been updated to
+          revert to old behavior. The tool has also been updated to
           work correctly in containers now.
 
         * systemd-nspawn's --bind= and --bind-ro= options have been
@@ -955,7 +955,7 @@ CHANGES WITH 225:
 
         * systemd-resolved now dumps the contents of its DNS and LLMNR
           caches to the logs on reception of the SIGUSR1 signal. This
-          is useful to debug DNS behaviour.
+          is useful to debug DNS behavior.
 
         * The coredumpctl tool gained a new --directory= option to
           operate on journal files in a specific directory.
@@ -1218,7 +1218,7 @@ CHANGES WITH 220:
           runlevels to systemd targets has been removed. They are now
           hardcoded in a way that runlevels 2, 3, 4 all map to
           multi-user.target and 5 to graphical.target (which
-          previously was already the default behaviour).
+          previously was already the default behavior).
 
         * The auto-mounter logic gained support for mount point
           expiry, using a new TimeoutIdleSec= setting in .automount
@@ -1244,13 +1244,13 @@ CHANGES WITH 220:
         * When systemd forks off a new per-connection service instance
           it will now set the $REMOTE_ADDR environment variable to the
           remote IP address, and $REMOTE_PORT environment variable to
-          the remote IP port. This behaviour is similar to the
+          the remote IP port. This behavior is similar to the
           corresponding environment variables defined by CGI.
 
         * systemd-networkd gained support for uplink failure
           detection. The BindCarrier= option allows binding interface
           configuration dynamically to the link sense of other
-          interfaces. This is useful to achieve behaviour like in
+          interfaces. This is useful to achieve behavior like in
           network switches.
 
         * systemd-networkd gained support for configuring the DHCP
@@ -1272,7 +1272,7 @@ CHANGES WITH 220:
           no longer sufficient to set the global sysctl option to turn
           on IP forwarding! Instead, the .network file option
           IPForward= needs to be turned on! Note that the
-          implementation of this behaviour was broken in v219 and has
+          implementation of this behavior was broken in v219 and has
           been fixed in v220.
 
         * Many bonding and vxlan options are now configurable in
@@ -2135,7 +2135,7 @@ CHANGES WITH 217:
           terminated with SIGABRT (instead of just SIGTERM), in order
           to make sure a proper coredump and backtrace is
           generated. This ensures that hanging services will result in
-          similar coredump/backtrace behaviour as services that hit a
+          similar coredump/backtrace behavior as services that hit a
           segmentation fault.
 
         Contributions from: Andreas Henriksson, Andrei Borzenkov,
@@ -2963,7 +2963,7 @@ CHANGES WITH 212:
           "list-unit" command (which is the default one that is
           executed when no parameters are specified).
 
-        * The GPT automatic partition discovery logic will now honour
+        * The GPT automatic partition discovery logic will now honor
           two GPT partition flags: one may be set on a partition to
           cause it to be mounted read-only, and the other may be set
           on a partition to ignore it during automatic discovery.
@@ -3053,7 +3053,7 @@ CHANGES WITH 212:
           been last triggered. This information is then used on next
           reboot to possible execute overdue timer events, that
           could not take place because the system was powered off.
-          This enables simple anacron-like behaviour for timer units.
+          This enables simple anacron-like behavior for timer units.
 
         * systemctl's "list-timers" will now also list the time a
           timer unit was last triggered in addition to the next time
@@ -3603,7 +3603,7 @@ CHANGES WITH 209:
           such as /dev/null, /dev/urandom, and /dev/zero which are API
           entry points.
 
-        * logind has been extended to support behaviour like VT
+        * logind has been extended to support behavior like VT
           switching on seats that do not support a VT. This makes
           multi-session available on seats that are not the first seat
           (seat0), and on systems where kernel support for VTs has
@@ -3707,7 +3707,7 @@ CHANGES WITH 209:
           added that allows setting a specific SELinux execution
           context for a service.
 
-        * Most systemd client tools will now honour $SYSTEMD_LESS for
+        * Most systemd client tools will now honor $SYSTEMD_LESS for
           settings of the "less" pager. By default, these tools will
           override $LESS to allow certain operations to work, such as
           jump-to-the-end. With $SYSTEMD_LESS, it is possible to
@@ -4020,7 +4020,7 @@ CHANGES WITH 206:
           scan code lists have been entirely replaced by a udev
           "keyboard" builtin and a hwdb data file.
 
-        * systemd will now honour the kernel's "quiet" command line
+        * systemd will now honor the kernel's "quiet" command line
           argument also during late shutdown, resulting in a
           completely silent shutdown when used.
 
@@ -4437,7 +4437,7 @@ CHANGES WITH 199:
         * The SMACK setup logic gained support for uploading CIPSO
           security policy.
 
-        * Behaviour of PrivateTmp=, ReadWriteDirectories=,
+        * Behavior of PrivateTmp=, ReadWriteDirectories=,
           ReadOnlyDirectories= and InaccessibleDirectories= has
           changed. The private /tmp and /var/tmp directories are now
           shared by all processes of a service (which means
@@ -6105,7 +6105,7 @@ CHANGES WITH 38:
           fixed (i.e. PID file creation must have finished before the
           parent exits), but we now react a bit more gracefully to them.
 
-        * Add colourful boot output, mimicking the well-known output
+        * Add colorful boot output, mimicking the well-known output
           of existing distributions.
 
         * New option PassCredentials= for socket units, for

@@ -40,7 +40,7 @@
 #include "string-util.h"
 #include "util.h"
 
-#define MAX_CLIENT_ID_LEN (sizeof(uint32_t) + MAX_DUID_LEN)  /* Arbitrary limit */
+#define MAX_CLIENT_ID_LEN 7  /* Some routers cannot handle more than 7 bytes */
 #define MAX_MAC_ADDR_LEN CONST_MAX(INFINIBAND_ALEN, ETH_ALEN)
 
 #define RESTART_AFTER_NAK_MIN_USEC (1 * USEC_PER_SEC)
